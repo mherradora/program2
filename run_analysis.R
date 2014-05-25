@@ -42,20 +42,6 @@ features$var.class <- ifelse(features$var.valid,"numeric","NULL")
 
 validVars <- features[features$var.valid,"var.name"]
 
-features$labels <- features$feature
-features$labels <- gsub("tBody","Time Body ",features$labels)
-features$labels <- gsub("tGravity","Time Gravity ",features$labels)
-features$labels <- gsub("fBody","Fast Fourier Transform Body ",features$labels)
-features$labels <- gsub("fGravity","Fast Fourier Transform Gravity ",features$labels)
-features$labels <- gsub("Acc","Accelerometer ",features$labels)
-features$labels <- gsub("Gyro","Gyroscope ",features$labels)
-features$labels <- gsub("mean","Mean ",features$labels)
-features$labels <- gsub("std","Standard deviation ",features$labels)
-features$labels <- gsub("Jerk","Jerk Signal ",features$labels)
-features$labels <- gsub("Mag","Magnitude ",features$labels)
-
-validLabels <- features[features$var.valid,"labels"]
-
 #####
 # Read the test set
 data.test <- read.table("./data/UCI HAR Dataset/test/X_test.txt",
